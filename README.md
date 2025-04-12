@@ -73,3 +73,47 @@ dotnet add package HotChocolate.Data
 dotnet run
 
 Visit the Banana Cake Pop GraphQL IDE (usually at https://localhost:{port}/graphql) to interact with the API.
+
+
+🧪 Sample Queries & Mutations
+✅ Get All Items
+
+query {
+  items {
+    id
+    title
+    description
+    createdAt
+  }
+}
+
+➕ Add Item
+
+mutation {
+  addItem(input: { title: "New Task", description: "Do something cool" }) {
+    id
+    title
+    description
+    createdAt
+  }
+}
+
+✏️ Update Item
+
+mutation {
+  updateItem(id: "ITEM_ID", input: { title: "Updated", description: "Changed desc" }) {
+    id
+    title
+    description
+  }
+}
+
+❌ Delete Item
+
+mutation {
+  deleteItem(id: "ITEM_ID")
+}
+
+📄 License
+
+This project is licensed under the MIT License.
